@@ -35,16 +35,18 @@ public class MotherShip : MonoBehaviour
 		{
 			print ("Game Over!");
 			anim.SetTrigger("IsGameOver");
-
-			restartTimer += Time.deltaTime;
-
-			if(restartTimer >= restartDelay)
-			{
-				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-			}
-
 		}
 	}
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
 	void OnTriggerEnter(Collider other)
 	{
